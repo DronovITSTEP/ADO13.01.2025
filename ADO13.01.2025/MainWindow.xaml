@@ -6,7 +6,42 @@
         xmlns:local="clr-namespace:ADO13._01._2025"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Canvas>
+        <Button x:Name="connection_btn" 
+                Content="Проверить подключение" 
+                Canvas.Left="13" 
+                Canvas.Top="17" 
+                Height="44" 
+                Width="161" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Click="connection_btn_Click"
+                Visibility="Collapsed"/>
+        <StackPanel x:Name="StackButton" 
+                    Orientation="Vertical" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Width="358"
+                    Margin="10"
+                    Visibility="Visible">
+            <Button x:Name="ShowAllCustomerButton" 
+                    Content="Отобразить всех покупателей"
+                    Margin="0,0,0,5" Click="ShowAllCustomerButton_Click"/>
+            <Button x:Name="ShowEmailCustomerButton"
+                    Content="Отобразить email покупателей"
+                    Margin="0,0,0,5" Click="ShowEmailCustomerButton_Click"/>
+            <Button x:Name="ShowPromoByCountryButton"
+                    Content="Отобразить акции" Click="ShowPromoByCountryButton_Click"/>
+            <ComboBox x:Name="CountryBox"
+                      Margin="0,0,0,5"/>
+        </StackPanel>
+        <ListBox x:Name="listResult" 
+                 Height="344" 
+                 Width="358" 
+                 Canvas.Left="415" 
+                 Canvas.Top="10" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top"
+                 />
+    </Canvas>
 </Window>

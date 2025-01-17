@@ -16,24 +16,117 @@
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
                 Click="connection_btn_Click"
-                Visibility="Collapsed"/>
+                Visibility="Visible"/>
         <StackPanel x:Name="StackButton" 
                     Orientation="Vertical" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Center" 
                     Width="358"
                     Margin="10"
-                    Visibility="Visible">
+                    Visibility="Collapsed">
             <Button x:Name="ShowAllCustomerButton" 
                     Content="Отобразить всех покупателей"
                     Margin="0,0,0,5" Click="ShowAllCustomerButton_Click"/>
             <Button x:Name="ShowEmailCustomerButton"
                     Content="Отобразить email покупателей"
                     Margin="0,0,0,5" Click="ShowEmailCustomerButton_Click"/>
-            <Button x:Name="ShowPromoByCountryButton"
-                    Content="Отобразить акции" Click="ShowPromoByCountryButton_Click"/>
-            <ComboBox x:Name="CountryBox"
-                      Margin="0,0,0,5"/>
+            <GroupBox>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Column="0" 
+                        x:Name="CountryBox"
+                              Margin="0,0,0,5"/>
+                    <ComboBox Grid.Column="1" 
+                              x:Name="CityBox"
+                              Margin="0,0,0,5"/>
+                    <Button Grid.Column="0"
+                            Grid.Row="1"
+                            x:Name="ShowPromoByCountryButton"
+                            Content="Отобразить акции" 
+                            Click="ShowPromoByCountryButton_Click"/>
+                    <Button Grid.Column="1"
+                            Grid.Row="1"
+                            x:Name="ShowCustomerByCountryButton"
+                            Content="Отобразить покупателей" 
+                            Click="ShowCustomerByCountryButton_Click"/>
+                    <Button Grid.Column="0"
+                            Grid.Row="2"
+                            x:Name="ShowCustomerByCityButton"                          
+                            Click="ShowCustomerByCityButton_Click">
+                        <TextBlock Text="Отобразить покупателей по городу"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"/>
+                    </Button>
+                </Grid>
+            </GroupBox>
+            <Button x:Name="ShowCountCustomerByCityButton"
+                    Margin="0,0,0,5" Click="ShowCountCustomerByCityButton_Click">
+                <TextBlock Text="Отобразить кол-во покупателей в каждом городе"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <Button x:Name="ShowCountCustomerByCountryButton"
+                    Margin="0,0,0,5" Click="ShowCountCustomerByCountryButton_Click">
+                <TextBlock Text="Отобразить кол-во покупателей в каждом стране"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <Button x:Name="ShowCountCityByCountryButton"
+                    Margin="0,0,0,5" Click="ShowCountCityByCountryButton_Click">
+                <TextBlock Text="Отобразить кол-во городов в каждом стране"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <Button x:Name="ShowAvgCityByCountryButton"
+                    Margin="0,0,0,5" Click="ShowAvgCityByCountryButton_Click">
+                <TextBlock Text="Отобразить среднее кол-во городов в каждом стране"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <GroupBox>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Column="0" 
+            x:Name="StartDateBox"
+                  Margin="0,0,0,5"/>
+                    <ComboBox Grid.Column="1" 
+                  x:Name="EndDateBox"
+                  Margin="0,0,0,5"/>
+                    <ComboBox x:Name="SectionBox"
+                              Grid.Row="1"
+                              Grid.ColumnSpan="2"
+                              Margin="0,0,0,5"/>
+                    <Button Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="2"
+                            x:Name="ShowPromoByRangeDateButton"
+                            Content="Отобразить акции по промежутку времени" 
+                            Click="ShowPromoByRangeDateButton_Click"/>
+                </Grid>
+            </GroupBox>
+            <Button x:Name="ShowTopCountryByCustomerButton"
+        Margin="0,0,0,5" Click="ShowTopCountryByCustomerButton_Click">
+                <TextBlock Text="Отобразить топ-3 стран по количеству покупателей;"
+               TextWrapping="Wrap"
+               TextAlignment="Center"/>
+            </Button>
         </StackPanel>
         <ListBox x:Name="listResult" 
                  Height="344" 

@@ -22,5 +22,10 @@ namespace ADO13._01._2025
         public int SectionId { get; set; }
     
         public virtual Section Sections { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} {StartDate} {EndDate} {Country} {Sections}";
+        }
     }
 }

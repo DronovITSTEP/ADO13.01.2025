@@ -23,5 +23,10 @@ namespace ADO13._01._2025
         public string Gender { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName} {Surname} {Email} {Country} {City}";
+        }
     }
 }

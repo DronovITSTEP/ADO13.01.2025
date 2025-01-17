@@ -25,5 +25,10 @@ namespace ADO13._01._2025
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PromoProduct> PromoProducts { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }
